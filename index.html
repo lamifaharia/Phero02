@@ -45,6 +45,50 @@
     </div>
   </header>
 
+  <!-- 2. Banner -->
+  <section class="flex flex-col-reverse flex-row items-center justify-between p-8">
+    <div class="w-1/2 space-y-4">
+      <h1 class="text-4xl font-bold text-green-700">Grow your green family</h1>
+      <p class="text-gray-600">Discover unique and beautiful plants to fill your space with life.</p>
+    </div>
+    <div class="w-1/2 mb-6">
+      <img src="B12A02-Responsive-Flowers/assets/hero-flower.png" alt="Plants" class="rounded-xl w-full">
+    </div>
+  </section>
+
+  <!-- 3. Plants Section -->
+  <section class="p-8 text-center">
+    <h2 class="text-3xl font-bold text-green-700">Our Plants</h2>
+    <p class="text-gray-600 mb-6">Hand-picked and grown with love 🌿</p>
+
+    <div id="plantCards" class="grid grid-cols-2 gap-6 mt-8"></div>
+
+    <script>
+      const plants = [
+        { name: 'Aloe Vera', price: '$10', image: 'images/aloe-vera.png' },
+        { name: 'Snake Plant', price: '$12', image: 'images/snake-plant.png' },
+        { name: 'Peace Lily', price: '$15', image: 'images/peace-lily.png' },
+        { name: 'Spider Plant', price: '$8', image: 'images/spider-plant.png' },
+        { name: 'Areca Palm', price: '$18', image: 'images/areca-palm.png' },
+        { name: 'Fiddle Leaf Fig', price: '$20', image: 'images/fiddle-leaf-fig.png' },
+        { name: 'Rubber Plant', price: '$9', image: 'images/rubber-plant.png' },
+        { name: 'ZZ Plant', price: '$11', image: 'images/zz-plant.png' }
+      ];
+
+      const container = document.getElementById('plantCards');
+      plants.forEach(plant => {
+        container.innerHTML += `
+          <div class="bg-white p-4 rounded shadow hover:shadow-lg transition">
+            <img src="${plant.image}" class="mb-3 w-full rounded" alt="${plant.name}">
+            <h3 class="text-lg font-semibold">${plant.name}</h3>
+            <p class="text-gray-600">${plant.price}</p>
+            <button onclick="alert('Flower Added to Cart')" class="mt-2 px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600">Add to Cart</button>
+          </div>
+        `;
+      });
+    </script>
+  </section>
+
     
 </body>
 </html>
