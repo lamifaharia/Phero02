@@ -6,9 +6,11 @@
   <title>Plantify Shop</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
+    /* Trusted Badge Animation */
     .spin-badge {
       animation: spin 3s linear infinite;
     }
+
     @keyframes spin {
       0% { transform: rotate(0deg); }
       100% { transform: rotate(360deg); }
@@ -17,10 +19,10 @@
 </head>
 <body class="font-sans text-gray-800">
 
-     <!-- 1. Navbar -->
+  <!-- 1. Navbar -->
   <header class="w-full px-4 py-4 flex items-center justify-between bg-white shadow-md">
     <div class="text-2xl font-bold text-green-700">Plantify</div>
-    <nav class="flex space-x-6 items-center">
+    <nav class="hidden md:flex space-x-6 items-center">
       <a href="#" class="hover:text-green-600">Home</a>
       <a href="#" class="hover:text-green-600">Features</a>
       <a href="#" class="hover:text-green-600">Shop</a>
@@ -34,7 +36,7 @@
         </svg>
       </div>
     </nav>
-    <div class="flex items-center space-x-2">
+    <div class="flex items-center space-x-2 md:hidden">
       <span class="text-sm font-medium">Cart</span>
       <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" stroke-width="2"
         viewBox="0 0 24 24">
@@ -46,12 +48,12 @@
   </header>
 
   <!-- 2. Banner -->
-  <section class="flex flex-col-reverse flex-row items-center justify-between p-8">
-    <div class="w-1/2 space-y-4">
+  <section class="flex flex-col-reverse md:flex-row items-center justify-between p-8">
+    <div class="md:w-1/2 space-y-4">
       <h1 class="text-4xl font-bold text-green-700">Grow your green family</h1>
       <p class="text-gray-600">Discover unique and beautiful plants to fill your space with life.</p>
     </div>
-    <div class="w-1/2 mb-6">
+    <div class="md:w-1/2 mb-6 md:mb-0">
       <img src="B12A02-Responsive-Flowers/assets/hero-flower.png" alt="Plants" class="rounded-xl w-full">
     </div>
   </section>
@@ -60,43 +62,48 @@
   <section class="p-8 text-center">
     <h2 class="text-3xl font-bold text-green-700">Our Plants</h2>
     <p class="text-gray-600 mb-6">Hand-picked and grown with love 🌿</p>
+    <!-----------yyufgyfgrg-------->
+   <!-- Plant Cards Section -->
+<div id="plantCards" class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-8"></div>
 
-    <div id="plantCards" class="grid grid-cols-2 gap-6 mt-8"></div>
+<!-- Add this Script just before </body> -->
+<script>
+  const plants = [
+    { name: 'Aloe Vera', price: '$10', image: 'images/aloe-vera.png' },
+    { name: 'Snake Plant', price: '$12', image: 'images/snake-plant.png' },
+    { name: 'Peace Lily', price: '$15', image: 'images/peace-lily.png' },
+    { name: 'Spider Plant', price: '$8', image: 'images/spider-plant.png' },
+    { name: 'Areca Palm', price: '$18', image: 'images/areca-palm.png' },
+    { name: 'Fiddle Leaf Fig', price: '$20', image: 'images/fiddle-leaf-fig.png' },
+    { name: 'Rubber Plant', price: '$9', image: 'images/rubber-plant.png' },
+    { name: 'ZZ Plant', price: '$11', image: 'images/zz-plant.png' }
+  ];
 
-    <script>
-      const plants = [
-        { name: 'Aloe Vera', price: '$10', image: 'images/aloe-vera.png' },
-        { name: 'Snake Plant', price: '$12', image: 'images/snake-plant.png' },
-        { name: 'Peace Lily', price: '$15', image: 'images/peace-lily.png' },
-        { name: 'Spider Plant', price: '$8', image: 'images/spider-plant.png' },
-        { name: 'Areca Palm', price: '$18', image: 'images/areca-palm.png' },
-        { name: 'Fiddle Leaf Fig', price: '$20', image: 'images/fiddle-leaf-fig.png' },
-        { name: 'Rubber Plant', price: '$9', image: 'images/rubber-plant.png' },
-        { name: 'ZZ Plant', price: '$11', image: 'images/zz-plant.png' }
-      ];
+  const container = document.getElementById('plantCards');
+  plants.forEach(plant => {
+    container.innerHTML += `
+      <div class="bg-white p-4 rounded shadow hover:shadow-lg transition">
+        <img src="${plant.image}" class="mb-3 w-full rounded" alt="${plant.name}">
+        <h3 class="text-lg font-semibold">${plant.name}</h3>
+        <p class="text-gray-600">${plant.price}</p>
+        <button onclick="alert('Flower Added to Cart')" class="mt-2 px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600">Add to Cart</button>
+      </div>
+    `;
+  });
+</script>
 
-      const container = document.getElementById('plantCards');
-      plants.forEach(plant => {
-        container.innerHTML += `
-          <div class="bg-white p-4 rounded shadow hover:shadow-lg transition">
-            <img src="${plant.image}" class="mb-3 w-full rounded" alt="${plant.name}">
-            <h3 class="text-lg font-semibold">${plant.name}</h3>
-            <p class="text-gray-600">${plant.price}</p>
-            <button onclick="alert('Flower Added to Cart')" class="mt-2 px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600">Add to Cart</button>
-          </div>
-        `;
-      });
-    </script>
   </section>
+
   <!-- 4. Plants Lover Section -->
-  <section class="flex flex-col flex-row items-center justify-between p-8 bg-gray-50">
-    <div class="w-1/2 relative">
+  <section class="flex flex-col md:flex-row items-center justify-between p-8 bg-gray-50">
+    <div class="md:w-1/2 relative">
       <img src="B12A02-Responsive-Flowers/assets/flower-store.png" alt="Plant Lover" class="rounded-xl w-300px">
-      <span class="absolute top-4 right-4 bg-yellow-300 px-3 py-1 text-xs font-bold rounded-full spin-badge hidden inline-block">
+      <!-- Trusted Badge -->
+      <span class="absolute top-4 right-4 bg-yellow-300 px-3 py-1 text-xs font-bold rounded-full spin-badge hidden md:inline-block">
         Trusted 🌟
       </span>
     </div>
-    <div class="w-1/2 mt-6 space-y-3 text-left">
+    <div class="md:w-1/2 mt-6 md:mt-0 space-y-3 text-left">
       <h2 class="text-3xl font-bold text-green-700">Why Plant Lovers Choose Us</h2>
       <ul class="list-disc list-inside text-gray-700">
         <li>Carefully selected varieties</li>
@@ -111,7 +118,7 @@
   <section class="relative p-12 text-center text-white" style="background-image: url('B12A02-Responsive-Flowers/assets/news-letter-bg.png'); background-size: cover;">
     <div class="bg-black bg-opacity-50 p-8 rounded-xl">
       <h2 class="text-4xl font-bold mb-4">Join the Colorful Bunch</h2>
-      <div class="flex flex-col flex-row justify-center items-center gap-4 max-w-xl mx-auto">
+      <div class="flex flex-col md:flex-row justify-center items-center gap-4 max-w-xl mx-auto">
         <input type="email" placeholder="Enter your email" class="w-full px-4 py-2 rounded text-black" />
         <button class="bg-green-600 hover:bg-green-700 px-6 py-2 rounded">Subscribe</button>
       </div>
@@ -119,11 +126,12 @@
   </section>
 
   
-  <!-- 7. Challenge Section -->
+
+  <!-- 🧪 Challenges Part -->
   <section class="p-8 text-center">
     <h2 class="text-3xl font-bold text-green-700">Latest Deals</h2>
     <p class="text-gray-600 mb-6">Don't miss these blooming offers</p>
-    <div class="grid grid-cols-1 gap-6">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
       <div class="bg-white p-4 shadow rounded">
         <img src="B12A02-Responsive-Flowers/assets/deal-bloom.png" class="mb-3 rounded w-full" alt="Deal Plant">
         <h3 class="text-lg font-semibold">Special Plant Pack</h3>
@@ -142,11 +150,9 @@
     </div>
   </section>
 
-
-
- <!-- 6. Footer Section -->
+  <!-- 6. Footer Section -->
   <footer class="bg-green-800 text-white p-8">
-    <div class="flex flex-col flex-row justify-between items-center gap-4">
+    <div class="flex flex-col md:flex-row justify-between items-center gap-4">
       <div class="text-xl font-bold">Plantify</div>
       <div class="flex space-x-6">
         <a href="#" class="hover:underline">Home</a>
@@ -156,6 +162,6 @@
       </div>
     </div>
   </footer>
-    
+
 </body>
 </html>
