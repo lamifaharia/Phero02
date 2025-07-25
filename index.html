@@ -55,6 +55,7 @@
     </div>
     <div class="md:w-1/2 mb-6 md:mb-0">
       <img src="B12A02-Responsive-Flowers/assets/hero-flower.png" alt="Plants" class="rounded-xl w-full">
+   
     </div>
   </section>
 
@@ -66,42 +67,76 @@
    <!-- Plant Cards Section -->
 <div id="plantCards" class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-8"></div>
 
-<!-- Add this Script just before </body> -->
-<script>
-  const plants = [
-    { name: 'Aloe Vera', price: '$10', image: 'images/aloe-vera.png' },
-    { name: 'Snake Plant', price: '$12', image: 'images/snake-plant.png' },
-    { name: 'Peace Lily', price: '$15', image: 'images/peace-lily.png' },
-    { name: 'Spider Plant', price: '$8', image: 'images/spider-plant.png' },
-    { name: 'Areca Palm', price: '$18', image: 'images/areca-palm.png' },
-    { name: 'Fiddle Leaf Fig', price: '$20', image: 'images/fiddle-leaf-fig.png' },
-    { name: 'Rubber Plant', price: '$9', image: 'images/rubber-plant.png' },
-    { name: 'ZZ Plant', price: '$11', image: 'images/zz-plant.png' }
-  ];
 
-  const container = document.getElementById('plantCards');
-  plants.forEach(plant => {
-    container.innerHTML += `
-      <div class="bg-white p-4 rounded shadow hover:shadow-lg transition">
-        <img src="${plant.image}" class="mb-3 w-full rounded" alt="${plant.name}">
-        <h3 class="text-lg font-semibold">${plant.name}</h3>
-        <p class="text-gray-600">${plant.price}</p>
-        <button onclick="alert('Flower Added to Cart')" class="mt-2 px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600">Add to Cart</button>
-      </div>
-    `;
-  });
-</script>
+<!-- Plant Cards Section -->
+<div class="grid grid-cols-4 gap-6 mt-8">
+  <div class="bg-white p-4 rounded shadow hover:shadow-lg transition">
+    <img src="B12A02-Responsive-Flowers/assets/aloe-vera-succulent-yellow-flowers-summer-medicinal-properties-rock-garden-drought-tolerant-green-leaves-fleshy-buy-aloe-purchase.webp" alt="Aloe Vera" class="mb-3 w-full rounded">
+    <h3 class="text-lg font-semibold">Aloe Vera</h3>
+    <p class="text-gray-600">$10</p>
+    <button onclick="alert('Flower Added to Cart')" class="mt-2 px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600">Add to Cart</button>
+  </div>
+
+  <div class="bg-white p-4 rounded shadow hover:shadow-lg transition">
+    <img src="B12A02-Responsive-Flowers/assets/snake-plant-care-overview-1902772-04-d3990a1d0e1d4202a824e929abb12fc1-349b52d646f04f31962707a703b94298.jpeg" alt="Snake Plant" class="mb-3 w-full rounded">
+    <h3 class="text-lg font-semibold">Snake Plant</h3>
+    <p class="text-gray-600">$12</p>
+    <button onclick="alert('Flower Added to Cart')" class="mt-2 px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600">Add to Cart</button>
+  </div>
+
+  <div class="bg-white p-4 rounded shadow hover:shadow-lg transition">
+    <img src="B12A02-Responsive-Flowers/assets/SPR-variegated-peace-lily-domino-7097188-hero-A-422d7faa152d42d3a4030ff8a2a33768.jpg" alt="Peace Lily" class="mb-3 w-full rounded">
+    <h3 class="text-lg font-semibold">Peace Lily</h3>
+    <p class="text-gray-600">$15</p>
+    <button onclick="alert('Flower Added to Cart')" class="mt-2 px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600">Add to Cart</button>
+  </div>
+
+  <div class="bg-white p-4 rounded shadow hover:shadow-lg transition">
+    <img src="B12A02-Responsive-Flowers/assets/Spider Plant2.avif" alt="Spider Plant" class="mb-3 w-full rounded">
+    <h3 class="text-lg font-semibold">Spider Plant</h3>
+    <p class="text-gray-600">$8</p>
+    <button onclick="alert('Flower Added to Cart')" class="mt-2 px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600">Add to Cart</button>
+  </div>
+
+  <div class="bg-white p-4 rounded shadow hover:shadow-lg transition">
+    <img src="B12A02-Responsive-Flowers/assets/Areca Palm.webp" alt="Areca Palm" class="mb-3 w-full rounded">
+    <h3 class="text-lg font-semibold">Areca Palm</h3>
+    <p class="text-gray-600">$18</p>
+    <button onclick="alert('Flower Added to Cart')" class="mt-2 px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600">Add to Cart</button>
+  </div>
+
+  <div class="bg-white p-4 rounded shadow hover:shadow-lg transition">
+    <img src="B12A02-Responsive-Flowers/assets/Fiddle Leaf Fig.webp" alt="Fiddle Leaf Fig" class="mb-3 w-full rounded">
+    <h3 class="text-lg font-semibold">Fiddle Leaf Fig</h3>
+    <p class="text-gray-600">$20</p>
+    <button onclick="alert('Flower Added to Cart')" class="mt-2 px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600">Add to Cart</button>
+  </div>
+
+  <div class="bg-white p-4 rounded shadow hover:shadow-lg transition">
+    <img src="B12A02-Responsive-Flowers/assets/Rubber Plant.jpg" alt="Rubber Plant" class="mb-3 w-full rounded">
+    <h3 class="text-lg font-semibold">Rubber Plant</h3>
+    <p class="text-gray-600">$9</p>
+    <button onclick="alert('Flower Added to Cart')" class="mt-2 px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600">Add to Cart</button>
+  </div>
+
+  <div class="bg-white p-4 rounded shadow hover:shadow-lg transition">
+    <img src="B12A02-Responsive-Flowers/assets/ZZ Plant.webp" alt="ZZ Plant" class="mb-3 w-full rounded">
+    <h3 class="text-lg font-semibold">ZZ Plant</h3>
+    <p class="text-gray-600">$11</p>
+    <button onclick="alert('Flower Added to Cart')" class="mt-2 px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600">Add to Cart</button>
+  </div>
+</div>
 
   </section>
 
   <!-- 4. Plants Lover Section -->
   <section class="flex flex-col md:flex-row items-center justify-between p-8 bg-gray-50">
-    <div class="md:w-1/2 relative">
-      <img src="B12A02-Responsive-Flowers/assets/flower-store.png" alt="Plant Lover" class="rounded-xl w-300px">
-      <!-- Trusted Badge -->
-      <span class="absolute top-4 right-4 bg-yellow-300 px-3 py-1 text-xs font-bold rounded-full spin-badge hidden md:inline-block">
-        Trusted 🌟
-      </span>
+    
+      <div class="md:w-1/2 relative">
+    <img src="B12A02-Responsive-Flowers/assets/flower-store.png" alt="Plant Lover" class="rounded-xl w-[300px]">
+    <img src="B12A02-Responsive-Flowers/assets/trusted-badge.png" alt="Trusted Badge" 
+         class="absolute top-4 right-4 w-20">
+</div>
     </div>
     <div class="md:w-1/2 mt-6 md:mt-0 space-y-3 text-left">
       <h2 class="text-3xl font-bold text-green-700">Why Plant Lovers Choose Us</h2>
